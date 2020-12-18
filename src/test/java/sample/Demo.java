@@ -1,4 +1,4 @@
-package Demo;
+package sample;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -9,8 +9,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class Sample {
+public class Demo {
 
+	String spreadsheetId = "1ty-PpPVeeyqPsJj9W3t7Wo-z5wqONcUZRq0ZR06xWF8";
 	@Test
 	public void login() {
 		try {
@@ -20,7 +21,10 @@ public class Sample {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			
-			driver.findElement(By.id("userName")).sendKeys("Arunava");
+			ReadWriteGoogleSheet sample = new ReadWriteGoogleSheet();
+			String str = sample.getData(spreadsheetId, "Username");
+			
+			driver.findElement(By.id("userName")).sendKeys(str);
 			driver.findElement(By.id("password")).sendKeys("Password1$");
 			
 			driver.quit();

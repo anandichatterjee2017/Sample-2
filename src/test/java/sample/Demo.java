@@ -11,11 +11,11 @@ import org.testng.annotations.Test;
 
 public class Demo {
 
-	String spreadsheetId = "1ty-PpPVeeyqPsJj9W3t7Wo-z5wqONcUZRq0ZR06xWF8";
+	String spreadsheetId = "1d6wXLqS8AgtBFP8aXiCRPRLU1IjSH29pgGPjfaa4iBg";
 	@Test
 	public void login() {
 		try {
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\BrowserDriversEXE\\chromedriver.exe"); 	
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/BrowserDriversEXE/chromedriver"); 	
 			WebDriver driver = new ChromeDriver();
 			driver.get("https://demoqa.com/login");
 			driver.manage().window().maximize();

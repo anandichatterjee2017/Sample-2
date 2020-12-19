@@ -25,6 +25,7 @@ public class Demo {
 			String str = sample.getData(spreadsheetId, "Username");
 			
 			driver.findElement(By.id("userName")).sendKeys(str);
+			Thread.sleep(5000);
 			driver.findElement(By.id("password")).sendKeys("Password1$");
 			
 			driver.quit();
